@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/kuntilanak.mp3-af5f8b938fc03245bd34761e4db024b2.mp3str"
+
+[deps]
+
+source_file="res://assets/music/kuntilanak.mp3"
+dest_files=[ "res://.import/kuntilanak.mp3-af5f8b938fc03245bd34761e4db024b2.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

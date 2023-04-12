@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/jangkrik_bgm.ogg-3b81c9d6880b1dcbadd8dde2ed9c745d.oggstr"
+
+[deps]
+
+source_file="res://assets/music/jangkrik_bgm.ogg"
+dest_files=[ "res://.import/jangkrik_bgm.ogg-3b81c9d6880b1dcbadd8dde2ed9c745d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

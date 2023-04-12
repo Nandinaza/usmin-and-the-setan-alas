@@ -14,6 +14,10 @@ config/name="usmin and the setan alas"
 run/main_scene="res://splash.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+LoadingData="*res://loading_data.tscn"
+
 [display]
 
 window/size/width=1280
@@ -31,6 +35,19 @@ common/drop_mouse_on_gui_input_disabled=true
 
 pointing/emulate_touch_from_mouse=true
 
+[layer_names]
+
+2d_render/layer_1="2d render"
+3d_render/layer_1="3d render"
+2d_physics/layer_1="player"
+3d_physics/layer_1="player"
+2d_physics/layer_2="objek"
+3d_physics/layer_2="barang"
+2d_physics/layer_3="barang"
+3d_physics/layer_3="objek"
+2d_physics/layer_4="lantai"
+3d_physics/layer_4="lantai"
+
 [physics]
 
 common/enable_pause_aware_picking=true
@@ -38,6 +55,6 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 quality/driver/driver_name="GLES2"
+quality/driver/fallback_to_gles2=true
 vram_compression/import_etc=true
-vram_compression/import_etc2=false
 environment/default_environment="res://default_env.tres"

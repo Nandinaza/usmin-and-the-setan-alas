@@ -3,16 +3,17 @@
 importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/diorite.png-0fe701f168faf45b492fd60a5bc7ee01.s3tc.stex"
+path.etc2="res://.import/diorite.png-0fe701f168faf45b492fd60a5bc7ee01.etc2.stex"
 path.etc="res://.import/diorite.png-0fe701f168faf45b492fd60a5bc7ee01.etc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc" ],
+"imported_formats": [ "s3tc", "etc2", "etc" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/texture/diorite.png"
-dest_files=[ "res://.import/diorite.png-0fe701f168faf45b492fd60a5bc7ee01.s3tc.stex", "res://.import/diorite.png-0fe701f168faf45b492fd60a5bc7ee01.etc.stex" ]
+dest_files=[ "res://.import/diorite.png-0fe701f168faf45b492fd60a5bc7ee01.s3tc.stex", "res://.import/diorite.png-0fe701f168faf45b492fd60a5bc7ee01.etc2.stex", "res://.import/diorite.png-0fe701f168faf45b492fd60a5bc7ee01.etc.stex" ]
 
 [params]
 

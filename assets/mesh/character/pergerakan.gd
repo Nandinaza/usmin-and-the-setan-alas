@@ -11,16 +11,25 @@ onready var mesh3 = get_parent().get_node("kayu3")
 
 var search_kayu = 0
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if(raycast.is_colliding() and Input.is_action_just_pressed("ui_accept")):
-		var ray = raycast.get_collider()
-		mesh1.delete_it()
-		mesh2.delete_it()
-		mesh3.delete_it()
-		print(mesh1.get_name())
-		search_kayu += 1
+		if(search_kayu == 0):
+			mesh1.delete_it()
+			search_kayu = 1
+			print(search_kayu)
+		elif(search_kayu == 1 ):
+			mesh2.delete_it()
+			search_kayu = 2
+			print(search_kayu)
+		elif(search_kayu == 2 ):
+			mesh3.delete_it()
+			search_kayu = 3
+			print(search_kayu)
+		elif(search_kayu == 3):
+			get_tree().change_scene("res://menu_ui/main_menu.tscn")
+		print(raycast.get_collider())
 		print(search_kayu)
-	
+
 	rotate_y(joystick.rotate.x)
 	$SpringArm.rotate_x(joystick.rotate.y)
 #	rotation_degrees.z = 0
@@ -36,11 +45,17 @@ func _physics_process(delta):
 	pergerakan.y += kec_jatuh
 	
 	pergerakan = (pergerakan.x * transform.basis.x) + (pergerakan.z * transform.basis.z)
-	var kecepatan = pergerakan * 13
+	var kecepatan = pergerakan * 20
 	
 	move_and_slide(kecepatan,Vector3.UP)
 	joystick.rotate = Vector2.ZERO
+#	mesh1.get_name()
 	
 func _input(event):
 	if(event is InputEventScreenDrag):
 		$SpringArm.rotation.x = clamp($SpringArm.rotation.x,deg2rad(-45),deg2rad(45))
+
+
+func _on_kayu1_kena(tea):
+	print(tea)
+	mesh1.delete_it()

@@ -12,5 +12,4 @@ func _on_Timer_timeout():
 	print("sampe")
 	sprite.set_texture(null)
 	
-	get_tree().change_scene("res://scene_action/hutan.tscn")
-
+	get_tree().change_scene("res://menu_ui/main_menu.tscn")
