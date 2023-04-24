@@ -1,16 +1,23 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/mesh/library2.tres" type="MeshLibrary" id=1]
+[ext_resource path="res://assets/mesh/character/Main_character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://menu_ui/controller.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/mesh/character/pergerakan_labirin.gd" type="Script" id=3]
+[ext_resource path="res://assets/mesh/labirin/map_labirin.tres" type="MeshLibrary" id=4]
 
 [node name="Spatial" type="Spatial"]
 
+[node name="Spatial" parent="." instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="control" parent="." instance=ExtResource( 2 )]
+
 [node name="GridMap" type="GridMap" parent="."]
-transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0 )
-mesh_library = ExtResource( 1 )
+mesh_library = ExtResource( 4 )
+cell_size = Vector3( 4, 4, 4 )
 data = {
-"cells": PoolIntArray( 0, 0, 1, -65534, 1, 0, -65533, 1, 1, -65536, 65534, 0 )
+"cells": PoolIntArray( 2, 1, 1179648, 3, 1, 1179648, 4, 1, 1179648, 5, 1, 1179648 )
 }
 __meta__ = {
-"_editor_clip_": 0,
-"_editor_floor_": Vector3( 0, -1, 0 )
+"_editor_clip_": 0
 }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/mesh/library1.tres" type="MeshLibrary" id=1]
 [ext_resource path="res://assets/mesh/character/Main_character.tscn" type="PackedScene" id=2]
@@ -60,9 +60,6 @@ surfaces/0 = {
 "vertex_count": 2716
 }
 
-[sub_resource type="BoxShape" id=16]
-extents = Vector3( 0.5, 0.5, 0.5 )
-
 [sub_resource type="SpatialMaterial" id=10]
 albedo_color = Color( 0.235294, 0.752941, 0.254902, 1 )
 
@@ -123,10 +120,6 @@ transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, -17.219, 0, -2.095 )
 [node name="Area" type="Area" parent="untitled"]
 collision_layer = 2
 collision_mask = 9
-
-[node name="CollisionShape" type="CollisionShape" parent="untitled/Area"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0016464, -0.0364113, -0.0182892 )
-shape = SubResource( 16 )
 
 [node name="SpotLight" type="SpotLight" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -8, 11.248, -3 )

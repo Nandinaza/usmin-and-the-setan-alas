@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/lorong_pertigaan.obj-c0212d0c0ab41741b1adb5f48dfaddda.mesh"
+
+[deps]
+
+files=[ "res://.import/lorong_pertigaan.obj-c0212d0c0ab41741b1adb5f48dfaddda.mesh" ]
+
+source_file="res://assets/mesh/labirin/lorong_pertigaan.obj"
+dest_files=[ "res://.import/lorong_pertigaan.obj-c0212d0c0ab41741b1adb5f48dfaddda.mesh", "res://.import/lorong_pertigaan.obj-c0212d0c0ab41741b1adb5f48dfaddda.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
