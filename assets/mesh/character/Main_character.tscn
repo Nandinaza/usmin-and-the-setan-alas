@@ -15,18 +15,19 @@ shape = SubResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+visible = false
 mesh = SubResource( 2 )
 
 [node name="SpringArm" type="SpringArm" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14142, -1.8454 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14142, -0.484187 )
 
 [node name="Camera" type="Camera" parent="SpringArm"]
 
 [node name="SpotLight" type="SpotLight" parent="SpringArm"]
 light_color = Color( 0.941176, 0.984314, 0.627451, 1 )
-light_energy = 15.0
-spot_range = 20.0
-spot_angle = 50.0
+light_energy = 5.0
+spot_range = 41.794
+spot_angle = 60.0
 
 [node name="RayCast" type="RayCast" parent="SpringArm"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )

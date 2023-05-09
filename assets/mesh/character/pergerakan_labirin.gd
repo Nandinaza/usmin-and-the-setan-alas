@@ -23,7 +23,7 @@ func _physics_process(_delta):
 	pergerakan.y += kec_jatuh
 	
 	pergerakan = (pergerakan.x * transform.basis.x) + (pergerakan.z * transform.basis.z)
-	var kecepatan = pergerakan * 20
+	var kecepatan = pergerakan * 10
 	
 	move_and_slide(kecepatan,Vector3.UP)
 	joystick.rotate = Vector2.ZERO

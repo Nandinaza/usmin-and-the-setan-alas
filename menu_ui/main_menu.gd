@@ -27,9 +27,7 @@ func _on_about_pressed():
 
 func _on_settings_pressed():
 	sound_click.play()
-#	camera.transform = Vector2(90,90)
-#	camera.transform.x = 90
-#	$AnimationPlayer.play("click")
+	get_tree().change_scene("res://scene_action/labirin.tscn")
 
 
 
@@ -39,4 +37,5 @@ func _on_TouchScreenButton_pressed():
 
 
 func _on_Timer_timeout():
-	get_tree().change_scene("res://scene_action/hutan.tscn")
+#	get_tree().change_scene("res://scene_action/hutan.tscn")
+	get_tree().change_scene("res://story_telling/preparation_to_go.tscn")

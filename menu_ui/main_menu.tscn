@@ -47,8 +47,6 @@ scale = Vector2( 6, 5.1875 )
 normal = ExtResource( 11 )
 passby_press = true
 
-[node name="Tween" type="Tween" parent="."]
-
 [node name="KinematicBody2D" type="KinematicBody2D" parent="."]
 position = Vector2( 549, 271 )
 __meta__ = {
