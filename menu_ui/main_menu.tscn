@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assets/ui/button/play_off.png" type="Texture" id=1]
 [ext_resource path="res://assets/ui/button/about_off.png" type="Texture" id=2]
@@ -8,10 +8,92 @@
 [ext_resource path="res://assets/ui/button/about_on.png" type="Texture" id=6]
 [ext_resource path="res://assets/ui/main_title.png" type="Texture" id=7]
 [ext_resource path="res://menu_ui/main_menu.gd" type="Script" id=8]
-[ext_resource path="res://assets/music/bgm.mp3" type="AudioStream" id=9]
+[ext_resource path="res://assets/ui/background/settings_bg.png" type="Texture" id=9]
 [ext_resource path="res://assets/music/click.wav" type="AudioStream" id=10]
 [ext_resource path="res://assets/texture/tanah.png" type="Texture" id=11]
 [ext_resource path="res://Loading_screen.png" type="Texture" id=12]
+[ext_resource path="res://assets/ui/background/about_bg.png" type="Texture" id=13]
+[ext_resource path="res://assets/music/Coutdown_bgm.ogg" type="AudioStream" id=14]
+[ext_resource path="res://assets/ui/background/title_backgroung.png" type="Texture" id=15]
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("KinematicBody2D/Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 91, 89 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "about_back"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("KinematicBody2D/Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 91, 810 ), Vector2( 91, 90 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "about_go"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("KinematicBody2D/Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 91, 89 ), Vector2( 91, 810 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "settings_back"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("KinematicBody2D/Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1371, 90 ), Vector2( 91, 90 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "settings_go"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("KinematicBody2D/Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 91, 90 ), Vector2( 1371, 90 ) ]
+}
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 86.9253
@@ -19,8 +101,27 @@ radius = 86.9253
 [node name="node2d" type="Node2D"]
 script = ExtResource( 8 )
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 2 )
+anims/about_back = SubResource( 4 )
+anims/about_go = SubResource( 3 )
+anims/settings_back = SubResource( 5 )
+anims/settings_go = SubResource( 6 )
+
 [node name="usmin_and_the" type="Sprite" parent="."]
 texture = ExtResource( 7 )
+centered = false
+
+[node name="about_bg" type="Sprite" parent="."]
+position = Vector2( 1280, 0 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="settings_bg" type="Sprite" parent="."]
+position = Vector2( 0, 720 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 9 )
 centered = false
 
 [node name="play" type="TouchScreenButton" parent="."]
@@ -62,7 +163,7 @@ position = Vector2( 91, 89 )
 current = true
 
 [node name="bgm" type="AudioStreamPlayer2D" parent="KinematicBody2D/Camera2D"]
-stream = ExtResource( 9 )
+stream = ExtResource( 14 )
 
 [node name="sound_click" type="AudioStreamPlayer2D" parent="KinematicBody2D/Camera2D"]
 stream = ExtResource( 10 )
@@ -76,8 +177,32 @@ centered = false
 wait_time = 2.0
 one_shot = true
 
+[node name="title_menu" type="Sprite" parent="."]
+position = Vector2( 0, 720 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 15 )
+centered = false
+
+[node name="title_menu2" type="Sprite" parent="."]
+position = Vector2( 1280, 0 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 15 )
+centered = false
+
+[node name="back1" type="TouchScreenButton" parent="."]
+position = Vector2( 50, 1230 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 6 )
+
+[node name="back2" type="TouchScreenButton" parent="."]
+position = Vector2( 1300, 494 )
+scale = Vector2( 0.5, 0.5 )
+normal = ExtResource( 6 )
+
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="about" to="." method="_on_about_pressed"]
 [connection signal="pressed" from="TouchScreenButton" to="." method="_on_TouchScreenButton_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="back1" to="." method="_on_back1_pressed"]
+[connection signal="pressed" from="back2" to="." method="_on_back2_pressed"]

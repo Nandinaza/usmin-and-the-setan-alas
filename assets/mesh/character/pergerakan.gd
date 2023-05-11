@@ -8,24 +8,29 @@ onready var raycast = $SpringArm/RayCast
 onready var mesh1 = get_parent().get_node("kayu1")
 onready var mesh2 = get_parent().get_node("kayu2")
 onready var mesh3 = get_parent().get_node("kayu3")
+var masuk_tenda = true
 
 var search_kayu = 0
 
 func _physics_process(_delta):
 	if(raycast.is_colliding() and Input.is_action_just_pressed("ui_accept")):
-		if(search_kayu == 0):
-			mesh1.delete_it()
-			search_kayu = 1
-			print(search_kayu)
-		elif(search_kayu == 1 ):
-			mesh2.delete_it()
-			search_kayu = 2
-			print(search_kayu)
-		elif(search_kayu == 2 ):
-			mesh3.delete_it()
-			search_kayu = 3
-			print(search_kayu)
-		elif(search_kayu == 3):
+		mesh1.delete_it() 
+		mesh2.delete_it() 
+		mesh3.delete_it()
+		search_kayu += 1
+#		if(search_kayu == 0):
+#			mesh1.delete_it()
+#			search_kayu = 1
+#			print(search_kayu)
+#		elif(search_kayu == 1 ):
+#			mesh2.delete_it()
+#			search_kayu = 2
+#			print(search_kayu)
+#		elif(search_kayu == 2 ):
+#			mesh3.delete_it()
+#			search_kayu = 3
+#			print(search_kayu)
+		if(search_kayu == 3 and masuk_tenda):
 			get_tree().change_scene("res://menu_ui/main_menu.tscn")
 		print(raycast.get_collider())
 		print(search_kayu)

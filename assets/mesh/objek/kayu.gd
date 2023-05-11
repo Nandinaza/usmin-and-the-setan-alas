@@ -1,13 +1,18 @@
 extends Spatial
 
-signal kena(tea)
+var sentuh = false
+var can_hover = true
 
 func delete_it():
-	self.queue_free()
+	if(sentuh):
+		self.visible = false
+		self.translation = Vector3(0,0,0)
+
 func get_name():
 #	emit_signal("kena",name)
 	return self.name
 
 
 func _on_Area_body_entered(body):
-	pass # Replace with function body.
+	if body.name == "Spatial":
+		sentuh = true
