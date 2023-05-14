@@ -3,6 +3,7 @@ extends Node2D
 var music_background
 var sound_click
 var camera
+onready var level = load("res://story_telling/preparation_to_go.tscn")
 
 func _ready():
 	music_background = $KinematicBody2D/Camera2D/bgm
@@ -33,7 +34,8 @@ func _on_TouchScreenButton_pressed():
 
 func _on_Timer_timeout():
 #	get_tree().change_scene("res://scene_action/hutan.tscn")
-	get_tree().change_scene("res://story_telling/preparation_to_go.tscn")
+#	var level = load("res://story_telling/preparation_to_go.tscn")
+	get_tree().change_scene_to(level)
 
 
 #Tombol kembali
@@ -46,3 +48,7 @@ func _on_back1_pressed():
 func _on_back2_pressed():
 	sound_click.play()
 	$AnimationPlayer.play("settings_back")
+
+
+func _on_github_link_pressed():
+	get_tree().change_scene("res://story_telling/testing.tscn")

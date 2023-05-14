@@ -1,0 +1,13 @@
+[gd_scene format=2]
+
+[node name="dialog" type="Node2D"]
+
+[node name="orang" type="Sprite" parent="."]
+
+[node name="background" type="Sprite" parent="."]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 436.0
+margin_top = 535.0
+margin_right = 736.0
+margin_bottom = 659.0

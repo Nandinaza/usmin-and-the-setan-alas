@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://assets/ui/button/play_off.png" type="Texture" id=1]
 [ext_resource path="res://assets/ui/button/about_off.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://assets/ui/background/about_bg.png" type="Texture" id=13]
 [ext_resource path="res://assets/music/Coutdown_bgm.ogg" type="AudioStream" id=14]
 [ext_resource path="res://assets/ui/background/title_backgroung.png" type="Texture" id=15]
+[ext_resource path="res://assets/ui/take_item.png" type="Texture" id=16]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -199,6 +200,10 @@ position = Vector2( 1300, 494 )
 scale = Vector2( 0.5, 0.5 )
 normal = ExtResource( 6 )
 
+[node name="github_link" type="TouchScreenButton" parent="."]
+position = Vector2( 787, 949 )
+normal = ExtResource( 16 )
+
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="about" to="." method="_on_about_pressed"]
@@ -206,3 +211,4 @@ normal = ExtResource( 6 )
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="back1" to="." method="_on_back1_pressed"]
 [connection signal="pressed" from="back2" to="." method="_on_back2_pressed"]
+[connection signal="pressed" from="github_link" to="." method="_on_github_link_pressed"]

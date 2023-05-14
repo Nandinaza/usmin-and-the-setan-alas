@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://assets/dialog/dialog_background.png" type="Texture" id=1]
+[ext_resource path="res://assets/dialog/dialog_aska.png" type="Texture" id=1]
 [ext_resource path="res://assets/dialog/bakso_sapi/BaksoSapi.otf" type="DynamicFontData" id=2]
-[ext_resource path="res://assets/dialog/dialog_Nandi.png" type="Texture" id=3]
+[ext_resource path="res://assets/ui/background/tenda.png" type="Texture" id=3]
 [ext_resource path="res://story_telling/preparation_to_go.gd" type="Script" id=4]
-[ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/button/next_scene.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/button/next_dialog.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -15,22 +16,24 @@ font_data = ExtResource( 2 )
 script = ExtResource( 4 )
 
 [node name="background" type="Sprite" parent="."]
-texture = ExtResource( 1 )
-centered = false
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="orang" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
 centered = false
 __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="orang" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
-position = Vector2( 1130, 618 )
-normal = ExtResource( 5 )
+position = Vector2( 1085, 567 )
+scale = Vector2( 0.58, 0.628 )
+normal = ExtResource( 6 )
 pressed = ExtResource( 5 )
 
 [node name="label" type="Label" parent="."]
@@ -40,7 +43,6 @@ margin_right = 1173.0
 margin_bottom = 668.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "hallo guys slkdfja ;kf dsalkfdjsaflkjsdflak anaananannan"
 align = 1
 autowrap = true
 
