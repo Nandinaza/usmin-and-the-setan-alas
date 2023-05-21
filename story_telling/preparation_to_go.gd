@@ -31,7 +31,14 @@ var percakapan = [
 	"bagus itu, nggak sampe gunung, Alas(kebun) pun jadilah",
 	"*** singkatnya merekapun berubah pikiran dan kemah di situ",
 	"malam ini dingin sekali",
-	"Min tolong carikan kayu untuk membuat api unggun"
+	"Min tolong carikan 3 kayu untuk membuat api unggun",
+	"baiklah aku akan mencari 3 kayu ",
+	"guys, setahu saya disini kita nggak boleh ngomong kasar",
+	"soalnya itu pamali",
+	"lalu? ",
+	"sekedar mengingatkan",
+	"oh, tenang saja aku nggak akan berkata kasar kok",
+	" "
 ]
 
 func _ready():
@@ -43,6 +50,7 @@ func _on_TouchScreenButton_pressed():
 	match progress :
 		6:
 			set_images("Nan")
+			set_background(3)
 		7:
 			set_images("Ak")
 		8:
@@ -51,11 +59,38 @@ func _on_TouchScreenButton_pressed():
 			set_images("Us")
 		12:
 			set_images("Nan")
-#			set_background(2)
+			set_background(2)
 		13:
 			set_images("As")
+		15:
+			set_images("Nan")
+		16:
+			set_background(4)
+		18:
+			set_images("Ak")
+		19:
+			set_images("As")
+		20:
+			set_images("Nan")
+		22:
+			set_images("Us")
+		23:
+			set_background(5)
+		24:
+			set_images("Nan")
+		26:
+			set_images("Us")
+		27:
+			set_images("As")
+		29:
+			set_images("Ak")
+		30:
+			set_images("As")
+		31:
+			set_images("Us")
+		
 	print(progress)
-	if progress > 24:
+	if progress > 31:
 		get_tree().change_scene("res://scene_action/hutan.tscn")
 
 func set_images(name):
@@ -72,10 +107,19 @@ func set_images(name):
 		var ter = load("res://assets/dialog/dialog_usmin.png")
 		orang.set_texture(ter)
 		
-#func set_background(nombor):
-#	if(nombor == 1):
-#		var bg = load("res://assets/ui/background/background_1.png")
-#		background.set_texture(bg)
-#	elif(nombor == 2):
-#		var bg = load("res://assets/ui/background/pemandangan1.jpg")
-#		background.set_texture(bg)
+func set_background(nombor):
+	if(nombor == 1):
+		var bg = load("res://assets/ui/background/indoor_nandi.png")
+		background.set_texture(bg)
+	elif(nombor == 2):
+		var bg = load("res://assets/ui/background/car_travel.png")
+		background.set_texture(bg)
+	elif(nombor == 3):
+		var bg = load("res://assets/ui/background/outdoor_nandi.png")
+		background.set_texture(bg)
+	elif(nombor == 4):
+		var bg = load("res://assets/ui/background/bg2.png")
+		background.set_texture(bg)
+	elif(nombor == 5):
+		var bg = load("res://assets/ui/background/tenda.png")
+		background.set_texture(bg)

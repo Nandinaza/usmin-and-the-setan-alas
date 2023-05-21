@@ -27,8 +27,7 @@ func _physics_process(_delta):
 	
 	move_and_slide(kecepatan,Vector3.UP)
 	joystick.rotate = Vector2.ZERO
-#	mesh1.get_name()
-	
+
 func _input(event):
 	if(event is InputEventScreenDrag):
 		$SpringArm.rotation.x = clamp($SpringArm.rotation.x,deg2rad(-45),deg2rad(45))

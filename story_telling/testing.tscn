@@ -1,9 +1,18 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://story_telling/testing.gd" type="Script" id=1]
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+onready var label = $Label
+var a = 0
+
+func _process(delta):
+	a += 1
+	label.text = str(a)
+"
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource( 1 )
+script = SubResource( 1 )
 
 [node name="Label" type="Label" parent="."]
 margin_right = 353.0

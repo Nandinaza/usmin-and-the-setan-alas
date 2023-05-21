@@ -31,7 +31,7 @@ func _physics_process(_delta):
 #			search_kayu = 3
 #			print(search_kayu)
 		if(search_kayu == 3 and masuk_tenda):
-			get_tree().change_scene("res://scene_action/labirin.tscn")
+			get_tree().change_scene("res://story_telling/dialog1.tscn")
 		print(raycast.get_collider())
 		print(search_kayu)
 

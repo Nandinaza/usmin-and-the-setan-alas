@@ -9,6 +9,7 @@ func _ready():
 	music_background = $KinematicBody2D/Camera2D/bgm
 	sound_click = $KinematicBody2D/Camera2D/sound_click
 	music_background.play()
+#	get_tree().quit()
 
 
 func _on_play_pressed():
@@ -24,13 +25,6 @@ func _on_about_pressed():
 func _on_settings_pressed():
 	sound_click.play()
 	$AnimationPlayer.play("settings_go")
-
-
-
-func _on_TouchScreenButton_pressed():
-	pass
-	
-
 
 func _on_Timer_timeout():
 #	get_tree().change_scene("res://scene_action/hutan.tscn")
@@ -51,4 +45,4 @@ func _on_back2_pressed():
 
 
 func _on_github_link_pressed():
-	get_tree().change_scene("res://story_telling/testing.tscn")
+	get_tree().change_scene("res://scene_action/labirin.tscn")
